@@ -11,9 +11,9 @@ import (
 	"os"
 	"time"
 
-	"github.com/99designs/cmdstalk/bs"
-	"github.com/99designs/cmdstalk/cmd"
-	"github.com/kr/beanstalk"
+	"github.com/beanstalkd/go-beanstalk"
+	"github.com/edo1/cmdstalk/bs"
+	"github.com/edo1/cmdstalk/cmd"
 )
 
 const (

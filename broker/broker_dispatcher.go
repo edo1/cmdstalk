@@ -6,7 +6,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/kr/beanstalk"
+	"github.com/beanstalkd/go-beanstalk"
 )
 
 const (

@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/kr/beanstalk"
+	"github.com/beanstalkd/go-beanstalk"
 )
 
 const (

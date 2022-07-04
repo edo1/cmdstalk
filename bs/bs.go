@@ -1,6 +1,6 @@
 /*
 	Package bs provides a richer and/or more domain-specific layer over
-	github.com/kr/beanstalk, including active-record style Job type.
+	github.com/beanstalkd/go-beanstalk, including active-record style Job type.
 */
 package bs
 
@@ -8,7 +8,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/kr/beanstalk"
+	"github.com/beanstalkd/go-beanstalk"
 )
 
 const (

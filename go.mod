@@ -1,5 +1,7 @@
-module github.com/99designs/cmdstalk
+module github.com/edo1/cmdstalk
 
 go 1.17
 
-require github.com/kr/beanstalk v0.0.0-20130218090021-4011ceaa3cee
+require (
+	github.com/beanstalkd/go-beanstalk v0.1.0
+)

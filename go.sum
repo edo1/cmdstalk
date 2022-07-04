@@ -1,2 +1,2 @@
-github.com/kr/beanstalk v0.0.0-20130218090021-4011ceaa3cee h1:WJEhmLuV1JSqpi2Wu2EUO4JhBWPyvtHU620wlF5E0LU=
-github.com/kr/beanstalk v0.0.0-20130218090021-4011ceaa3cee/go.mod h1:S640fId9Ag4k2hh6Hwwj62pMSZqfMtg/kfKPeAOhET8=
+github.com/beanstalkd/go-beanstalk v0.1.0 h1:IiNwYbAoVBDs5xEOmleGoX+DRD3Moz99EpATbl8672w=
+github.com/beanstalkd/go-beanstalk v0.1.0/go.mod h1:/G8YTyChOtpOArwLTQPY1CHB+i212+av35bkPXXj56Y=

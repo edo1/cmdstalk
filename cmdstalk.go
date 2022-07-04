@@ -1,7 +1,7 @@
 /*
 	Cmdstalk is a unix-process-based [beanstalkd][beanstalkd] queue broker.
 
-	Written in [Go][golang], cmdstalk uses the [kr/beanstalk][beanstalk]
+	Written in [Go][golang], cmdstalk uses the [beanstalkd/go-beanstalk][beanstalk]
 	library to interact with the [beanstalkd][beanstalkd] queue daemon.
 
 	Each job is passed as stdin to a new instance of the configured worker
@@ -25,8 +25,8 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/99designs/cmdstalk/broker"
-	"github.com/99designs/cmdstalk/cli"
+	"github.com/edo1/cmdstalk/broker"
+	"github.com/edo1/cmdstalk/cli"
 )
 
 func main() {

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/kr/beanstalk"
+	"github.com/beanstalkd/go-beanstalk"
 )
 
 // Job represents a beanstalkd job, and holds a reference to the connection so

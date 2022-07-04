@@ -3,7 +3,7 @@ cmdstalk
 
 Cmdstalk is a unix-process-based [beanstalkd][beanstalkd] queue broker.
 
-Written in [Go][golang], cmdstalk uses the [kr/beanstalk][beanstalk]
+Written in [Go][golang], cmdstalk uses the [beanstalkd/go-beanstalk][go-beanstalk]
 library to interact with the [beanstalkd][beanstalkd] queue daemon.
 
 Each job is passed as stdin to a new instance of the configured worker command.
@@ -25,12 +25,9 @@ From source:
 
 ```sh
 # Make sure you have a sane $GOPATH
-go install github.com/99designs/cmdstalk@latest
+go install github.com/edo1/cmdstalk@latest
 ```
 
-From binary:
-
-https://github.com/99designs/cmdstalk/releases
 
 
 Usage
@@ -73,27 +70,10 @@ file cmdstalk # cmdstalk: Mach-O 64-bit executable x86_64
 ```
 
 
-Release
--------
-
-```sh
-# Set up cross-compiling tool.
-go install github.com/mitchellh/gox@latest
-gox -build-toolchain -os="darwin linux" -arch="amd64"
-
-# Compile for various systems.
-gox -os="darwin linux" -arch="amd64"
-gzip cmdstalk_*_*
-
-# Create a release.
-open https://github.com/99designs/cmdstalk/releases/new
-```
-
 
 TODO
 ----
 
-* Graceful shutdown.
 * SIGKILL recalcitrant worker processes.
 * Logging improvements; stdout/stderr, concurrency-safety.
 * Interactive mode; single-concurrency, prompt for action for each job.
@@ -105,8 +85,8 @@ Created by [Paul Annesley][pda] and [Lachlan Donald][lox].
 
 © Copyright 2014 99designs Inc.
 
-[beanstalkd]: http://kr.github.io/beanstalkd/
-[beanstalk]: http://godoc.org/github.com/kr/beanstalk
+[beanstalkd]: http://github.com/beanstalkd/beanstalkd/
+[go-beanstalk]: http://godoc.org/github.com/beanstalkd/go-beanstalk/
 [golang]: http://golang.org/
 [pda]: https://twitter.com/pda
 [lox]: https://twitter.com/lox
