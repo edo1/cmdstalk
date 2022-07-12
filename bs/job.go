@@ -50,6 +50,11 @@ func (j Job) Priority() (uint32, error) {
 	return uint32(pri64), err
 }
 
+// Touch the job
+func (j Job) Touch() error {
+	return j.conn.Touch(j.Id)
+}
+
 // Release the job, with its original priority and no delay.
 func (j Job) Release(delay time.Duration) error {
 	pri, err := j.Priority()

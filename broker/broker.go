@@ -183,7 +183,7 @@ func (b *Broker) executeJob(job bs.Job, shellCmd string) (result *JobResult, err
 	result = &JobResult{JobId: job.Id, Executed: true}
 
 	ttr, err := job.TimeLeft()
-	timer := time.NewTimer(ttr + ttrMargin)
+	ticker := time.NewTicker(ttr - ttrMargin)
 	if err != nil {
 		return
 	}
@@ -201,11 +201,13 @@ func (b *Broker) executeJob(job bs.Job, shellCmd string) (result *JobResult, err
 stdoutReader:
 	for {
 		select {
-		case <-timer.C:
-			if err = cmd.Terminate(); err != nil {
-				return
-			}
-			result.TimedOut = true
+		case <-ticker.C:
+			b.log.Printf("touch job %d", job.Id)
+			job.Touch()
+			//if err = cmd.Terminate(); err != nil {
+			//	return
+			//}
+			//result.TimedOut = true
 		case data, ok := <-out:
 			if !ok {
 				break stdoutReader
@@ -215,7 +217,10 @@ stdoutReader:
 		}
 	}
 
+	ticker.Stop()
+
 	waitC := cmd.WaitChan()
+	timer := time.NewTimer(ttrMargin)
 
 waitLoop:
 	for {
